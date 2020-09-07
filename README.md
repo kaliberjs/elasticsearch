@@ -6,7 +6,7 @@ yarn add @kaliber/elasticsearch-mapping-compiler
 
 ## Example
 ```js
-// mappings/page.mapping.js
+// mapping/page.mapping.js
 const { long, text, keyword } = require('@kaliber/elasticsearch-mapping-compiler')
 const { pageContentMapping } = require('./domain/page-content')
 
@@ -28,7 +28,7 @@ module.exports = {
 ```
 
 ```js
-// mappings/domain/page-content.js
+// mapping/domain/page-content.js
 const { flexibleContent, repeater, object, text } = require('@kaliber/elasticsearch-mapping-compiler')
 
 module.exports = {
