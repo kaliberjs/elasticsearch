@@ -1,0 +1,8 @@
+{
+  "name": "@kaliber/elasticsearch-mapping-compiler",
+  "version": "0.0.1",
+  "description": "compile .mapping.js to elasticsearch mappings",
+  "main": "index.js",
+  "repository": "git@github.com:kaliberjs/elasticsearch-mapping-compiler.git",
+  "license": "MIT"
+}
