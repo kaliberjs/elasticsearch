@@ -4,6 +4,12 @@
 yarn add @kaliber/elasticsearch-mapping-compiler
 ```
 
+```json
+"scripts": {
+  "build:mapping": "compile-mapping /mapping"
+}
+```
+
 ## Example
 ```js
 // mapping/page.mapping.js

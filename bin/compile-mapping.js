@@ -3,7 +3,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const src = path.join(process.cwd(), 'mapping')
+const src = path.join(process.cwd(), process.argv.slice(2)[0] ? process.argv.slice(2)[0] : 'mapping')
 const target = path.join(src, 'exports')
 
 fs.removeSync(target)
