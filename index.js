@@ -4,10 +4,10 @@ function integer() { return { type: 'integer' } }
 function long() { return { type: 'long' } }
 function object(properties) { return { properties } }
 
-function flexibleContent(...types) {
+function flexibleContent(types) {
   return {
     type: 'nested',
-    properties: types.reduce(
+    properties: Object.entries(types).reduce(
       (result, [name, type]) => ({
         ...result,
         [name]: {
@@ -23,11 +23,11 @@ function flexibleContent(...types) {
   }
 }
 
-function repeater(...fields) {
+function repeater(fields) {
   return object({
     items: {
       type: 'nested',
-      properties: fields.reduce(
+      properties: Object.entries(fields).reduce(
         (result, [name, type]) => ({ ...result, [name]: type }),
         {}
       )

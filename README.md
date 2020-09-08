@@ -38,11 +38,11 @@ module.exports = {
 const { flexibleContent, repeater, object, text } = require('@kaliber/elasticsearch-mapping-compiler')
 
 module.exports = {
-  pageContentMapping: flexibleContent(
-    ['text', textGroup()],
-    ['image', imageGroup()],
-    ['stappenplan', stappenplanGroup()]
-  ),
+  pageContentMapping: flexibleContent({
+    'text': textGroup(),
+    'image': imageGroup(),
+    'stappenplan': stappenplanGroup()
+  }),
 }
 
 function textGroup() {
@@ -58,12 +58,12 @@ function imageGroup() {
 }
 
 function stappenplanGroup() {
-  return repeater(
-    ['title', text()],
-    ['content', flexibleContent(
-      ['text', textGroup()],
-      ['image', imageGroup()]
-    )]
-  )
+  return repeater({
+    'title': text(),
+    'content': flexibleContent({
+      'text': textGroup(),
+      'image': imageGroup()
+    })
+  })
 }
 ```
