@@ -3,18 +3,30 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const src = path.join(process.cwd(), process.argv.slice(2)[0] ? process.argv.slice(2)[0] : 'mapping')
+const src = path.join(process.cwd(), process.argv[2] ? process.argv[2] : 'mapping')
 const target = path.join(src, 'exports')
 
-fs.removeSync(target)
-fs.ensureDirSync(target)
+async function compile() {
+  await fs.remove(target)
+  await fs.ensureDir(target)
 
-fs.readdirSync(src)
-.filter((file) => file.includes('.mapping.js'))
-.forEach((file) => {
-  const { mapping } = require(path.join(src, file))
-  const data = JSON.stringify(mapping, null, 2)
+  const files = await fs.readdir(src)
+  const mappings = files.filter((file) => file.includes('.mapping.js'))
 
-  fs.writeFileSync(path.join(target, `${file.replace('.js', '')}.json`), data)
-  console.log(`created mapping for ${path.join(target, file)}`)
-})
+  const promises = mappings.map((file) => {
+    const { mapping } = require(path.join(src, file))
+    const data = JSON.stringify(mapping, null, 2)
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(path.join(target, `${file.replace('.js', '')}.json`), data, (err) => {
+        if (err) reject(err)
+        resolve()
+      })
+    }) 
+  })
+
+  await Promise.all(promises)
+  console.log(`created mappings`)
+}
+
+compile()
