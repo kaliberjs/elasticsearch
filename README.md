@@ -36,13 +36,11 @@ export default  {
 // mapping/domain/page-content.js
 import { flexibleContent, repeater, object, text } from '@kaliber/elasticsearch-mapping'
 
-module.exports = {
-  pageContentMapping: flexibleContent({
-    'text': textGroup(),
-    'image': imageGroup(),
-    'stappenplan': stappenplanGroup()
-  }),
-}
+export const pageContentMapping = flexibleContent({
+  'text': textGroup(),
+  'image': imageGroup(),
+  'stappenplan': stappenplanGroup()
+})
 
 function textGroup() {
   return object({
