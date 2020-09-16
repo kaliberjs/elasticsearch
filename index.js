@@ -1,7 +1,21 @@
+module.exports = {
+  text,
+  keyword,
+  integer,
+  long,
+  completion,
+  searchAsYouType,
+  flexibleContent,
+  repeater,
+  object,
+}
+
 function text() { return { type: 'text' } }
 function keyword() { return { type: 'keyword' } }
 function integer() { return { type: 'integer' } }
 function long() { return { type: 'long' } }
+function completion() { return { type: 'completion' }}
+function searchAsYouType() { return { type: 'search_as_you_type' }}
 function object(properties) { return { properties } }
 
 function flexibleContent(types) {
@@ -33,14 +47,4 @@ function repeater(fields) {
       )
     }
   })
-}
-
-module.exports = {
-  text,
-  keyword,
-  integer,
-  long,
-  flexibleContent,
-  repeater,
-  object,
 }

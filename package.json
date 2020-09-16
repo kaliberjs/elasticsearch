@@ -1,5 +1,5 @@
 {
-  "name": "@kaliber/elasticsearch-mapping-compiler",
+  "name": "@kaliber/elasticsearch-mapping",
   "version": "0.0.1",
   "description": "compile .mapping.js to elasticsearch mappings",
   "main": "index.js",

@@ -10,5 +10,5 @@ export default function mappingRenderer(template) {
           |};
 
           |?>
-  `.split(/^[ \t]*\|/m).join('')
+          |`.replace(/^[ \t]*\|/m, '')
 }

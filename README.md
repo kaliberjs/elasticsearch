@@ -1,22 +1,25 @@
 # Installation
 
 ```
-yarn add @kaliber/elasticsearch-mapping-compiler
+yarn add @kaliber/elasticsearch-mapping
 ```
 
-```json
-"scripts": {
-  "build.mapping": "compile-mapping /mapping"
+## config/default.js
+```js
+kaliber: {
+  templateRenderers: {
+    mapping: '@kaliber/elasticsearch-mapping/renderer/mapping-renderer'
+  }
 }
 ```
 
 ## Example
 ```js
 // mapping/page.mapping.js
-const { long, text, keyword } = require('@kaliber/elasticsearch-mapping-compiler')
-const { pageContentMapping } = require('./domain/page-content')
+import { long, text, keyword } from '@kaliber/elasticsearch-mapping'
+import { pageContentMapping } from './domain/page-content'
 
-const mapping = {
+export default  {
   mappings: {
     dynamic: 'strict',
     properties: {
@@ -27,15 +30,11 @@ const mapping = {
     }
   }
 }
-
-module.exports = {
-  mapping
-}
 ```
 
 ```js
 // mapping/domain/page-content.js
-const { flexibleContent, repeater, object, text } = require('@kaliber/elasticsearch-mapping-compiler')
+import { flexibleContent, repeater, object, text } from '@kaliber/elasticsearch-mapping'
 
 module.exports = {
   pageContentMapping: flexibleContent({
