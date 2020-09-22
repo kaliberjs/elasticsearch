@@ -3,6 +3,7 @@ module.exports = {
   keyword,
   integer,
   long,
+  date,
   completion,
   searchAsYouType,
   flexibleContent,
@@ -16,6 +17,7 @@ function integer() { return { type: 'integer' } }
 function long() { return { type: 'long' } }
 function completion() { return { type: 'completion' }}
 function searchAsYouType() { return { type: 'search_as_you_type' }}
+function date() { return { type: 'date' }}
 function object(properties) { return { properties } }
 
 function flexibleContent(types) {
