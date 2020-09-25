@@ -11,13 +11,13 @@ module.exports = {
   object,
 }
 
-function text() { return { type: 'text' } }
-function keyword() { return { type: 'keyword' } }
-function integer() { return { type: 'integer' } }
-function long() { return { type: 'long' } }
-function completion() { return { type: 'completion' }}
-function searchAsYouType() { return { type: 'search_as_you_type' }}
-function date() { return { type: 'date' }}
+function text(props = {}) { return { type: 'text', ...props } }
+function keyword(props = {}) { return { type: 'keyword', ...props } }
+function integer(props = {}) { return { type: 'integer', ...props } }
+function long(props = {}) { return { type: 'long', ...props } }
+function completion(props = {}) { return { type: 'completion', ...props }}
+function searchAsYouType(props = {}) { return { type: 'search_as_you_type', ...props }}
+function date(props = {}) { return { type: 'date', ...props }}
 function object(properties) { return { properties } }
 
 function flexibleContent(types) {
