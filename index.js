@@ -24,7 +24,6 @@ function nested(properties) { return { type: 'nested', properties }}
 
 function flexibleContent(types) {
   return {
-    type: 'nested',
     properties: Object.entries(types).reduce(
       (result, [name, type]) => ({
         ...result,
