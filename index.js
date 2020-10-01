@@ -40,13 +40,16 @@ function flexibleContent(types) {
 }
 
 function repeater(fields) {
-  return object({
-    items: {
-      type: 'nested',
-      properties: Object.entries(fields).reduce(
-        (result, [name, type]) => ({ ...result, [name]: type }),
-        {}
-      )
-    }
-  })
+  return {
+    type: 'nested',
+    ...object({
+      items: {
+        type: 'nested',
+        properties: Object.entries(fields).reduce(
+          (result, [name, type]) => ({ ...result, [name]: type }),
+          {}
+        )
+      }
+    })
+  }
 }
