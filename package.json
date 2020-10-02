@@ -1,8 +1,20 @@
 {
   "name": "@kaliber/elasticsearch",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/kaliberjs/elasticsearch",
   "description": "compile .mapping.js to elasticsearch mappings and helps you query elasticsearch",
-  "main": "index.js",
-  "repository": "git@github.com:kaliberjs/elasticsearch.git",
-  "license": "MIT"
+  "files": [
+    "src/**",
+    "LICENSE",
+    "mapping.js",
+    "query.js",
+    "mapping-to-php-renderer.js",
+    "readme.md",
+    "package.json"
+  ],
+  "sideEffects": false  
 }
