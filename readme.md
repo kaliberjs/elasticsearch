@@ -1,68 +1,69 @@
 # Elasticsearch
 
-This package contains a custom render and util functions that can be used with kaliberjs to build mappings. It also holds a set of util functions to query elasticsearch into a more readable format.
+This package contains a custom render and a set of functions that can be used with @kaliber/build to build mappings. It also holds a set of util functions to query elasticsearch into a more readable format.
 
+## Installation
 ```
 yarn add @kaliber/elasticsearch
 ```
 
-## config/default.js
-```js
-kaliber: {
-  templateRenderers: {
-    mapping: '@kaliber/elasticsearch/renderer/mapping-renderer'
-  }
-}
-```
+## Motivation
+We like ourselves to have some clean code. So whe made a set of util functions that help us create more readable mappings and write simple queries to send to the elasticsearch api.
 
-## Example
-```js
-// mapping/page.mapping.js
-import { long, text, keyword } from '@kaliber/elasticsearch'
-import { pageContentMapping } from './domain/page-content'
+_The renderer is used for an internal plugin. So this is probably not that interesting for everybody. But 
+the rest of the project can be used without it._
 
-export default  {
+## Usage of the utils
+For a more example you can find them into the `/examples` folder.
+
+_*.mapping.js_
+```js
+import { text, keyword, object } from '@kaliber/elasticsearch/mapping'
+
+export default {
   mappings: {
     dynamic: 'strict',
     properties: {
-      post_id: long(),
-      post_title: text(),
-      post_url: keyword(),
-      cf_flexible_content: pageContentMapping,
+      id: keyword(),
+      title: text(),
+      taxonomy: object({
+        title: text(),
+        slug: keyword(),
+      }),
     }
   }
 }
 ```
 
+_example.js_
 ```js
-// mapping/domain/page-content.js
-import { flexibleContent, repeater, object, text } from '@kaliber/elasticsearch'
+import { filter, matchAll, term, search } from '@kaliber/elasticsearch/query'
 
-export const pageContentMapping = flexibleContent({
-  'text': textGroup(),
-  'image': imageGroup(),
-  'stappenplan': stappenplanGroup()
-})
+const searchQuery = 'Waldo'
+const taxonomy = 'books'
 
-function textGroup() {
-  return object({
-    text: text(),
-  })
-}
+const query = and(
+  searchQuery
+    ? search(['title'], searchQuery),
+    : matchAll(),
+  filter(
+    taxonomy && term('taxonomy.slug', taxonomy)
+  )
+)
+```
 
-function imageGroup() {
-  return object({
-    caption: text(),
-  })
-}
+### Usage of the Renderer
+This package contains a renderer that can be used in combination with `@kaliber/build`. You have to update the `config/default.js` file.
 
-function stappenplanGroup() {
-  return repeater({
-    'title': text(),
-    'content': flexibleContent({
-      'text': textGroup(),
-      'image': imageGroup()
-    })
-  })
+```js
+kaliber: {
+  templateRenderers: {
+    mapping: '@kaliber/elasticsearch/mapping-to-php-renderer'
+  }
 }
 ```
+
+![](https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy.gif)
+
+## Disclaimer
+This library is intended for internal use, we provide __no__ support, use at your own risk.
