@@ -1,14 +1,14 @@
 # Installation
 
 ```
-yarn add @kaliber/elasticsearch-mapping
+yarn add @kaliber/elasticsearch
 ```
 
 ## config/default.js
 ```js
 kaliber: {
   templateRenderers: {
-    mapping: '@kaliber/elasticsearch-mapping/renderer/mapping-renderer'
+    mapping: '@kaliber/elasticsearch/renderer/mapping-renderer'
   }
 }
 ```
@@ -16,7 +16,7 @@ kaliber: {
 ## Example
 ```js
 // mapping/page.mapping.js
-import { long, text, keyword } from '@kaliber/elasticsearch-mapping'
+import { long, text, keyword } from '@kaliber/elasticsearch'
 import { pageContentMapping } from './domain/page-content'
 
 export default  {
@@ -34,7 +34,7 @@ export default  {
 
 ```js
 // mapping/domain/page-content.js
-import { flexibleContent, repeater, object, text } from '@kaliber/elasticsearch-mapping'
+import { flexibleContent, repeater, object, text } from '@kaliber/elasticsearch'
 
 export const pageContentMapping = flexibleContent({
   'text': textGroup(),
