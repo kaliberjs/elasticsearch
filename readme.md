@@ -8,13 +8,13 @@ yarn add @kaliber/elasticsearch
 ```
 
 ## Motivation
-We like ourselves to have some clean code. So whe made a set of util functions that help us create more readable mappings and write simple queries to send to the elasticsearch api.
+We like to write clean code. So whe made a set of util functions that help us create more readable mappings and write simple queries to send to the elasticsearch api.
 
 _The renderer is used for an internal plugin. So this is probably not that interesting for everybody. But 
 the rest of the project can be used without it._
 
 ## Usage of the utils
-For a more example you can find them into the `/examples` folder.
+You can find more examples in the `/examples` folder.
 
 _*.mapping.js_
 ```js
@@ -53,7 +53,7 @@ const query = and(
 ```
 
 ### Usage of the Renderer
-This package contains a renderer that can be used in combination with `@kaliber/build`. You have to update the `config/default.js` file.
+To configure @kaliber/build to use the custom renderer in this package, you have to update the config/default.js file:
 
 ```js
 kaliber: {

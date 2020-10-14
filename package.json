@@ -6,7 +6,7 @@
   },
   "license": "MIT",
   "repository": "https://github.com/kaliberjs/elasticsearch",
-  "description": "compile .mapping.js to elasticsearch mappings and helps you query elasticsearch",
+  "description": "compiles .mapping.js to elasticsearch mappings and helps you query elasticsearch",
   "files": [
     "src/**",
     "LICENSE",
