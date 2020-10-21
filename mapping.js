@@ -10,4 +10,5 @@ export {
   repeater,
   searchAsYouType,
   text,
+  array,
 } from './src/mapping'

@@ -5,5 +5,6 @@ export {
   matchAll,
   nested,
   filter,
-  search
+  search,
+  terms
 } from './src/query'
