@@ -5,8 +5,8 @@ export function long(props = {}) { return { type: 'long', ...props } }
 export function completion(props = {}) { return { type: 'completion', ...props }}
 export function searchAsYouType(props = {}) { return { type: 'search_as_you_type', ...props }}
 export function date(props = {}) { return { type: 'date', ...props }}
-export function object(props) { return { props } }
-export function nested(props) { return { type: 'nested', props }}
+export function object(properties) { return { properties } }
+export function nested(properties) { return { type: 'nested', properties }}
 export function array(props) { return props }
 
 export function flexibleContent(types) {
