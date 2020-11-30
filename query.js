@@ -6,5 +6,6 @@ export {
   nested,
   filter,
   search,
-  terms
+  terms,
+  range
 } from './src/query'
