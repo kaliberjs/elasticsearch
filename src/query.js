@@ -32,6 +32,8 @@ function multiMatch(fields, query) {
     multi_match: {
       query,
       fields,
+      type: 'most_fields',
+      operator: 'and',
       fuzziness: 'AUTO',
       prefix_length: 2
     }
