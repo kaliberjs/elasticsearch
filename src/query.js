@@ -5,12 +5,13 @@ export function matchAll() { return { match_all: {} } }
 export function terms(field, array) { return { terms: { [field]: array } } }
 export function range(field, conditions) { return { range: { [field]: { ...conditions } } } }
 
-export function nested(path, query) {
+export function nested(path, query, otherProps) {
   return {
     nested: {
       path,
       ignore_unmapped: true,
-      query
+      query,
+      ...otherProps
     }
   }
 }
