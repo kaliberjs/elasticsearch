@@ -7,6 +7,10 @@
   "license": "MIT",
   "repository": "https://github.com/kaliberjs/elasticsearch",
   "description": "compiles .mapping.js to elasticsearch mappings and helps you query elasticsearch",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
   "files": [
     "src/**",
     "LICENSE",
@@ -16,5 +20,11 @@
     "readme.md",
     "package.json"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1"
+  }
 }
