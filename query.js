@@ -3,9 +3,11 @@ export {
   and,
   term,
   matchAll,
+  match,
   nested,
   filter,
   search,
   terms,
-  range
+  range,
+  filterByWeight,
 } from './src/query'
