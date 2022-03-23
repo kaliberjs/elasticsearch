@@ -2,6 +2,7 @@ export function and(...queries) { return { bool: { must: queries.filter(Boolean)
 export function or(...queries) { return { bool: { should: queries.filter(Boolean) } } }
 export function term(field, value) { return { term: { [field]: value } } }
 export function matchAll() { return { match_all: {} } }
+export function match(conditions) { return { match: conditions } }
 export function terms(field, array) { return { terms: { [field]: array } } }
 export function range(field, conditions) { return { range: { [field]: { ...conditions } } } }
 
@@ -26,6 +27,10 @@ export function search(fields, query) {
     multiMatch(fields, query),
     queryString(fields, `*${query.trim()}*`), // trimming to prevent weird Elasticsearch behaviour
   )
+}
+
+export function filterByWeight(query, { weight }) {
+  return { filter: query, weight }
 }
 
 function multiMatch(fields, query) {
