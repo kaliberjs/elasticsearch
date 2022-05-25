@@ -1,1 +1,3 @@
-export { default } from './src/mapping-to-php-renderer'
+const renderer = require('./lib/mapping-to-php-renderer')
+
+module.exports = renderer

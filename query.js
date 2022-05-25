@@ -1,4 +1,4 @@
-export {
+const {
   or,
   and,
   term,
@@ -10,4 +10,18 @@ export {
   terms,
   range,
   filterByWeight,
-} from './src/query'
+} = require('./lib/query')
+
+module.exports = {
+  or,
+  and,
+  term,
+  matchAll,
+  match,
+  nested,
+  filter,
+  search,
+  terms,
+  range,
+  filterByWeight,
+}

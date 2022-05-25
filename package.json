@@ -16,5 +16,8 @@
     "readme.md",
     "package.json"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@kaliber/pack": "^0.0.2"
+  }
 }
