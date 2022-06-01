@@ -14,7 +14,8 @@
     "query.js",
     "mapping-to-php-renderer.js",
     "readme.md",
-    "package.json"
+    "package.json",
+    "lib/**"
   ],
   "sideEffects": false,
   "devDependencies": {
