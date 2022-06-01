@@ -1,27 +1,2 @@
-const {
-  or,
-  and,
-  term,
-  matchAll,
-  match,
-  nested,
-  filter,
-  search,
-  terms,
-  range,
-  filterByWeight,
-} = require('./lib/query')
-
-module.exports = {
-  or,
-  and,
-  term,
-  matchAll,
-  match,
-  nested,
-  filter,
-  search,
-  terms,
-  range,
-  filterByWeight,
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+Object.assign(exports, require('./lib/query.js'));
