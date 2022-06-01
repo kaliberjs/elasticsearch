@@ -19,5 +19,10 @@
   "sideEffects": false,
   "devDependencies": {
     "@kaliber/pack": "^0.0.2"
+  },
+  "scripts": {
+    "build": "kaliber-pack",
+    "watch": "kaliber-pack --watch",
+    "prepublishOnly": "kaliber-pack"
   }
 }
