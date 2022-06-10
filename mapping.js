@@ -1,8 +1,6 @@
-const mapping  = require('./lib/mapping.js')
+const mapping = require('./lib/mapping.js')
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.array = mapping.array;
 exports.completion = mapping.completion;
 exports.date = mapping.date;

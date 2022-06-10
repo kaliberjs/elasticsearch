@@ -1,8 +1,6 @@
 const query = require('./lib/query.js');
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.and = query.and;
 exports.filter = query.filter;
 exports.filterByWeight = query.filterByWeight;
