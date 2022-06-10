@@ -1,14 +1,15 @@
-export {
-  completion,
-  date,
-  flexibleContent,
-  integer,
-  keyword,
-  long,
-  nested,
-  object,
-  repeater,
-  searchAsYouType,
-  text,
-  array,
-} from './src/mapping'
+const mapping = require('./lib/mapping.js')
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.array = mapping.array;
+exports.completion = mapping.completion;
+exports.date = mapping.date;
+exports.flexibleContent = mapping.flexibleContent;
+exports.integer = mapping.integer;
+exports.keyword = mapping.keyword;
+exports.long = mapping.long;
+exports.nested = mapping.nested;
+exports.object = mapping.object;
+exports.repeater = mapping.repeater;
+exports.searchAsYouType = mapping.searchAsYouType;
+exports.text = mapping.text;
