@@ -65,7 +65,7 @@ kaliber: {
 
 ![](https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy.gif)
 
-## Notes about releasing a new version
+## Build steps before releasing a new version
 Because this library is used in both the node runtime and webpack environment, the library is compiled using kaliberjs/pack (https://github.com/kaliberjs/pack). When releasing a new version, do not forgot to execute `yarn build` before running `yarn publish`
 ## Disclaimer
 This library is intended for internal use, we provide __no__ support, use at your own risk.
