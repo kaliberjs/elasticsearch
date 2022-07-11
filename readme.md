@@ -13,8 +13,6 @@ We like to write clean code. So whe made a set of util functions that help us cr
 _The renderer is used for an internal plugin. So this is probably not that interesting for everybody. But 
 the rest of the project can be used without it._
 
-
-
 ## Usage of the utils
 You can find more examples in the `/examples` folder.
 
