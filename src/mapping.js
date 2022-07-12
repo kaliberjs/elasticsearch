@@ -8,6 +8,7 @@ export function date(props = {}) { return { type: 'date', ...props }}
 export function object(properties) { return { properties } }
 export function nested(properties) { return { type: 'nested', properties }}
 export function array(props) { return props }
+export function boolean() { return { type: 'boolean' } }
 
 export function flexibleContent(types) {
   return {

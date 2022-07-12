@@ -2,6 +2,7 @@ const mapping = require('./lib/mapping.js')
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.array = mapping.array;
+exports.boolean = mapping.boolean;
 exports.completion = mapping.completion;
 exports.date = mapping.date;
 exports.flexibleContent = mapping.flexibleContent;
