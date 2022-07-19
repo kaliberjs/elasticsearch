@@ -1,5 +1,6 @@
 export function and(...queries) { return { bool: { must: queries.filter(Boolean) } } }
 export function or(...queries) { return { bool: { should: queries.filter(Boolean) } } }
+export function not(...queries) { return { bool: { must_not: queries.filter(Boolean) } } }
 export function term(field, value) { return { term: { [field]: value } } }
 export function matchAll() { return { match_all: {} } }
 export function match(conditions) { return { match: conditions } }
