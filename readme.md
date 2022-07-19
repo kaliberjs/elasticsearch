@@ -7,10 +7,13 @@ This package contains a custom render and a set of functions that can be used wi
 yarn add @kaliber/elasticsearch
 ```
 
+> **Note**
+This library is precompiled using [kaliberjs/pack](https://github.com/kaliberjs/pack). Compiling it a second time will cause this library to stop working. This means for example that you should **not** add it to the `compileWithBabel` array of @kaliber/build.
+
 ## Motivation
 We like to write clean code. So whe made a set of util functions that help us create more readable mappings and write simple queries to send to the elasticsearch api.
 
-_The renderer is used for an internal plugin. So this is probably not that interesting for everybody. But 
+_The renderer is used for an internal plugin. So this is probably not that interesting for everybody. But
 the rest of the project can be used without it._
 
 ## Usage of the utils
@@ -64,6 +67,9 @@ kaliber: {
 ```
 
 ![](https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy.gif)
+
+## Releasing a new version
+Because this library is used in both the node runtime and webpack environment, the library is precompiled using [kaliberjs/pack](https://github.com/kaliberjs/pack). When releasing a new version, do not forget to execute `yarn build` before running `yarn publish`. This should be done because the yarn publish command uses your local files to upload to the npm registry.
 
 ## Disclaimer
 This library is intended for internal use, we provide __no__ support, use at your own risk.
