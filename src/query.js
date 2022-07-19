@@ -24,9 +24,15 @@ export function filter(...queries) {
 }
 
 export function search(fields, query) {
+  // https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#_reserved_characters
+  const queryWithoutPreservedCharacters = query
+    .replaceAll(/[<>]/g, '')
+    .replaceAll(/([+-=!(){}\[\]^"~*?:\\/]|&&|\|\|)/g, '\\$&')
+    .trim()
+
   return or(
-    multiMatch(fields, query),
-    queryString(fields, `*${query.trim()}*`), // trimming to prevent weird Elasticsearch behaviour
+    multiMatch(fields, queryWithoutPreservedCharacters),
+    queryString(fields, `*${queryWithoutPreservedCharacters}*`),
   )
 }
 
