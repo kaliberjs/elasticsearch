@@ -31,7 +31,7 @@ export function search(fields, query) {
     .trim()
 
   return or(
-    multiMatch(fields, queryWithoutPreservedCharacters),
+    multiMatch(fields, query),
     queryString(fields, `*${queryWithoutPreservedCharacters}*`),
   )
 }
