@@ -26,8 +26,8 @@ export function filter(...queries) {
 export function search(fields, query) {
   // https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#_reserved_characters
   const queryWithoutPreservedCharacters = query
-    .replaceAll(/[<>]/g, '')
-    .replaceAll(/([+-=!(){}\[\]^"~*?:\\/]|&&|\|\|)/g, '\\$&')
+    .replace(/[<>]/g, '')
+    .replace(/([+-=!(){}\[\]^"~*?:\\/]|&&|\|\|)/g, '\\$&')
     .trim()
 
   return or(
