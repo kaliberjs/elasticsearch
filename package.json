@@ -8,7 +8,6 @@
   "repository": "https://github.com/kaliberjs/elasticsearch",
   "description": "compiles .mapping.js to elasticsearch mappings and helps you query elasticsearch",
   "files": [
-    "src/**",
     "LICENSE",
     "mapping.js",
     "query.js",
