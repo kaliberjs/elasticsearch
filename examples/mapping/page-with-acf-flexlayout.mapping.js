@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { text, keyword, flexibleContent, object } from '@kaliber/elasticsearch/mapping'
 
 export default {

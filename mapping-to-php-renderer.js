@@ -1,4 +1,4 @@
-const renderer = require('./lib/mapping-to-php-renderer')
-Object.defineProperty(exports, "__esModule", { value: true });
+import MappingToPhpRenderer from './src/mapping-to-php-renderer.js'
 
-exports.default = renderer.default;
+// eslint-disable-next-line @kaliber/no-default-export
+export default MappingToPhpRenderer

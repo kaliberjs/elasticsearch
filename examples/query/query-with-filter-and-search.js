@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { and, filter, matchAll, term, search, nested, or } from '@kaliber/elasticsearch/query'
 
 const searchQuery = 'Waldo'

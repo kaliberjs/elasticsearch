@@ -1,0 +1,22 @@
+{
+  "include": [
+    "./src/**/*",
+    "./examples/**/*"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "checkJs": true,
+    "allowJs": true,
+    "strict": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "lib": [
+      "ES2024",
+      "DOM"
+    ],
+    "paths": {
+      "@kaliber/elasticsearch/*": ["./*"]
+    }
+  }
+}

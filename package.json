@@ -14,16 +14,10 @@
     "query.js",
     "mapping-to-php-renderer.js",
     "readme.md",
-    "package.json",
-    "lib/**"
+    "package.json"
   ],
   "sideEffects": false,
   "devDependencies": {
-    "@kaliber/pack": "^0.0.2"
-  },
-  "scripts": {
-    "build": "kaliber-pack",
-    "watch": "kaliber-pack --watch",
-    "prepublishOnly": "kaliber-pack"
+    "@kaliber/eslint-plugin": "^1.0.3"
   }
 }
