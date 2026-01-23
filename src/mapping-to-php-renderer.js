@@ -1,3 +1,5 @@
+/** @arg {object} template */
+// eslint-disable-next-line @kaliber/no-default-export
 export default function mappingRenderer(template) {
   return `|<?php
           |
